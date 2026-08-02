@@ -53,8 +53,17 @@ public class Livro {
         private String titulo;
         private String autor;
         private boolean disponivel;
+        private Usuario usuario;
 
-        public  Livro(String titulo, String autor) {
+        public Usuario getUsuario() {
+        return usuario;
+        }
+
+        public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+        }
+
+    public  Livro(String titulo, String autor) {
             this.titulo = titulo;
             this.autor = autor;
             this.disponivel = true;  // todo livro começa true para emprestimo
@@ -65,22 +74,25 @@ public class Livro {
             System.out.println("Titulo:" + this.titulo);
             System.out.println("Autor: " + this.autor);
             System.out.println("Disponibilidade: " + this.disponivel);
+            System.out.println("Locador: " + usuario);
 
         }
 
-        public void emprestarLivro() {
+        public void emprestarLivro(Usuario user1) {
             if (this.disponivel) {
                 this.disponivel = false;
-                System.out.format("Livro %s emprestado!\n", titulo);
+                this.usuario = user1;
+                System.out.format("Livro %s emprestado para %s !\n", titulo, usuario);
             }else {
                 System.out.format("Livro %s indisponíel para emprestimo!\n", titulo);
             }
         }
 
-        public void devolverLivro() {
+        public void devolverLivro(Usuario user) {
             if(!this.disponivel) {
                 this.disponivel = true;
-                System.out.printf("Livro devolvido");
+                this.usuario = user;
+                System.out.printf("Livro devolvido por 5d", usuario);
             }
             else {
                 System.out.println("Livro já está disponível");

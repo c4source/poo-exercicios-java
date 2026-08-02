@@ -10,13 +10,13 @@ public class Usuario {
             this.cpf = cpf;
         }
 
-        @Override
-        public String toString() {
-            return "Usuario {" +
-                    "nome='" + nome + '\'' +
-                    ", CPF='" + cpf + '\'' +
-                    '}';
-        }
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                '}';
+    }
 
     //getters/setters
         public String getNome() {

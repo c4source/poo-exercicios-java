@@ -10,11 +10,9 @@ public class Main {
         livro1.exibirDadosLivro();
         livro2.exibirDadosLivro();
 
+        Usuario user2 = new Usuario("Ronaldo", "555-555-555-55");
         //Emprestar o livro
-        livro1.emprestarLivro();
-        livro1.emprestarLivro();
-        livro1.devolverLivro();
-        livro1.emprestarLivro();
+        livro1.emprestarLivro(user2);
         livro1.exibirDadosLivro();
 
         //Usuario
